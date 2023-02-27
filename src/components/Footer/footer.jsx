@@ -7,20 +7,21 @@ import whatsapp from "./img/whatsapp.svg";
 import vk from "./img/vk.svg";
 import Logo from "../Logo/logo";
 
+
 const Footer = () => {
 	return (
 		<footer className="footer">
 			<div className="container">
 				<div className="footer__wrapper">
 					<div className="footer__col">
-						<Logo className="logo footer__logo" href="#" title="Логотип" aria-hidden={true}/>
+						<Logo className="logo footer__logo" title="Логотип" aria-hidden={true}/>
 						<p className="footer__copyright">
 							© «Интернет-магазин DogFood.ru»
 						</p>
 					</div>
 					<div className="footer__col">
 						<nav className="menu-bottom">
-							<a href="/catalogue" className="menu-bottom__item">
+							<a href="/catalog" className="menu-bottom__item">
 								Каталог
 							</a>
 							<a href="/catalogue" className="menu-bottom__item">
@@ -39,7 +40,7 @@ const Footer = () => {
 							<a href="/catalogue" className="menu-bottom__item">
 								Оплата и доставка
 							</a>
-							<a href="/catalogue" className="menu-bottom__item">
+							<a href="/faq" className="menu-bottom__item">
 								Часто спрашивают
 							</a>
 							<a href="/catalogue" className="menu-bottom__item">
