@@ -15,7 +15,7 @@ const Sort = ({currentSort, tabs = [], onChangeSort}) => {
 					key={tab.id}
 					id={tab.id}
 				>
-					<a onClick={(e) => handleClick(e, tab)}>
+					<a href='/#' onClick={(e) => handleClick(e, tab)}>
 						{tab.title}
 					</a>
 				</div>

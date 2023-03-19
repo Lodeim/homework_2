@@ -2,11 +2,26 @@ import s from './index.module.css';
 import cn from 'classnames';
 import {ReactComponent as FavoriteIcon} from './img/favorites.svg';
 import { Link } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { CardContext } from '../../context/cardContext';
+import { UserActionModal } from '../UserActionModal';
 
-function Header({children, user, onUpdateUser}) {
+
+function Header({children, onUpdateUser}) {
   const { favorites } = useContext(CardContext);
+
+ 
+
+  const [isUserActionModalVisible, setIsUserActionModalVisible] = useState(false);
+  const onCloseUserActionModal = (e) => {
+    e.stopPropagation()
+    setIsUserActionModalVisible(false);
+
+  };
+  const onOpenUserActionModal = () => {
+    setIsUserActionModalVisible(true);
+   
+  };
   return (
     <header className={cn(s.header,'cover')}>
       <div className="container">
@@ -17,6 +32,11 @@ function Header({children, user, onUpdateUser}) {
               <FavoriteIcon/>
               {favorites.length !== 0 && <span className={s.iconBubble}>{favorites.length}</span>}
             </Link>
+
+            <button onClick={onOpenUserActionModal}>Open User</button>
+            <UserActionModal         
+              isOpen={isUserActionModalVisible}
+              onClose={onCloseUserActionModal}/>
           </div>
         </div>
       </div>

@@ -96,6 +96,7 @@ function App() {
         return updateCard;
       })
   }, [currentUser, cards])
+
   
   return (
     <SortContext.Provider value={{ selectedTabId, setSelectedTabId }}>

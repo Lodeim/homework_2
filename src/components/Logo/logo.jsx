@@ -10,7 +10,7 @@ function Logo({className, href, ...props}) {
       ?  <Link to={{pathname: hrefValue}}  className={className ? className : "logo"}>
             <img src={logoSrc} alt="Логотип компании" className='logo__pic' />
         </Link>
-      : <a href='#'  className={className ? className : "logo"}>
+      : <a href='/#'  className={className ? className : "logo"}>
             <img src={logoSrc} alt="Логотип компании" className='logo__pic' />
         </a>
   )

@@ -17,6 +17,7 @@ const Card = ({ name, price, _id, likes, discount, wight, description, pictures,
 	const discount_price = calcDiscountPrice(price, discount);
 	const liked = isLiked(likes, currentUser?._id)
 
+	
 
 	function handleLikeClick(){
 		onProductLike({_id, likes})
