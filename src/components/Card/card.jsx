@@ -61,7 +61,7 @@ const Card = ({ name, price, _id, likes, discount, wight, description, pictures,
 								<p className="card__name">{name}</p>
 							</div>
 						</Link>
-						<a href="#" className="card__cart btn btn_type_primary">
+						<a href="/#" className="card__cart btn btn_type_primary">
 							В корзину
 						</a>
 					</div>

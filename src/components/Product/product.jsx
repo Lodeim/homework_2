@@ -56,13 +56,15 @@ export const Product = ({ onProductLike, pictures, likes = [], reviews, tags, na
                     <Save/>
                     <span>{isLike ? 'В избранном' : 'В избранное'}</span> 
                 </button>
+                
                 <button className={cn(s.favorite)} onClick={onOpenModal}>
+                <i className={cn(s.revicon, "fa-regular fa-comment")}></i>
                     <ReviewModal
                         isOpen={isModalVisible}
                         onClose={onCloseModal}
                         id={_id}
                         setReviewsRender={setReviewsRender}
-                        
+                        setIsModalVisible={setIsModalVisible}
                                   
                     />
        

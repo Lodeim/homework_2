@@ -32,8 +32,8 @@ function Header({children, onUpdateUser}) {
               <FavoriteIcon/>
               {favorites.length !== 0 && <span className={s.iconBubble}>{favorites.length}</span>}
             </Link>
-
-            <button onClick={onOpenUserActionModal}>Open User</button>
+            <i className={cn(s.iconUser, "fa-regular fa-user")} onClick={onOpenUserActionModal} />
+            {/* <button >Open User</button> */}
             <UserActionModal         
               isOpen={isUserActionModalVisible}
               onClose={onCloseUserActionModal}/>

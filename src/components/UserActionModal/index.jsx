@@ -5,6 +5,7 @@ import { UserContext } from "../../context/userContext";
 import { AddModal } from "../AddModal";
 import { AuthModal } from "../AuthModal";
 import { SignupModal } from "../SignupModal";
+import { Button } from "@mui/material";
 
 export const UserActionModal = ({ isOpen, onClose }) => {
   const { user } = useContext(UserContext);
@@ -32,7 +33,6 @@ export const UserActionModal = ({ isOpen, onClose }) => {
   const onOpenSignupModal = () => {
     setIsSignupModalVisible(true);
   };
-
   if (!document.cookie) {
     return (
       <Modal 
@@ -42,23 +42,20 @@ export const UserActionModal = ({ isOpen, onClose }) => {
       className="cnModal"
       overlayClassName="cnModalOverlay"
       >
-        <button onClick={onOpenAuthModal}>Авторизоваться</button>
+        <Button onClick={onOpenAuthModal} variant="contained">Авторизоваться</Button>
         <AuthModal 
         isOpen={isAuthModalVisible} 
         onClose={onCloseAuthModal} 
-        className="cnModal"
-        overlayClassName="cnModalOverlay"
         />
-        <button onClick={onOpenSignupModal}>Зарегистрироваться</button>
+        <Button onClick={onOpenSignupModal} variant="contained">Зарегистрироваться</Button>
         <SignupModal
           isOpen={isSignupModalVisible}
           onClose={onCloseSignupModal}
-          className="cnModal"
-          overlayClassName="cnModalOverlay"
+
         />
       </Modal>
     );
-  } else {
+  } else if (user?.name) {
     return (
       <Modal 
       isOpen={isOpen} 
@@ -68,7 +65,8 @@ export const UserActionModal = ({ isOpen, onClose }) => {
       overlayClassName="cnModalOverlay"
       >
         <p>{`Привет, ${user?.name}!`}</p>
-        <button onClick={onOpenAddModal}>Добавить товар</button>
+        <Button onClick={onOpenAddModal} variant="contained">Добавить товар</Button>
+
         <AddModal
           user={user}
           isOpen={isAddModalVisible}
